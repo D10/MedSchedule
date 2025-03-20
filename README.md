@@ -20,6 +20,12 @@ make lint
 make tests
 ```
 
+## Наполнение тестовыми данными
+
+```shell
+make fill_test_data
+```
+
 ## Запуск приложения
 
 ```shell
