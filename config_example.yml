@@ -1,0 +1,33 @@
+name: med_schedule
+
+debug: true
+
+serving:
+  http:
+    v1:
+      addr:
+        host: 0.0.0.0
+        port: 8000
+      workers: 1
+      allowed_origins:
+        - '*'
+
+service:
+  day_start: '08:00'
+  day_end: '22:00'
+  next_taking_period_hours: 1
+
+depends:
+  database:
+    engine: postgresql+asyncpg
+    host: localhost
+    port: 5432
+    user: postgres
+    password: password
+    database: med_db
+    echo: true
+
+logging:
+  sentry_dsn:
+  log_level: INFO
+  log_format: plain
